@@ -1,0 +1,24 @@
+{
+  "name": "reveal-vite",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "Alvaro Maceda <alvaro.maceda@ceedcv.es>",
+  "license": "MIT",
+  "homepage": "https://avast-python.github.io/reveal-template",
+  "scripts": {
+    "dev": "vite --port 8080",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "reveal.js": "^4.6.1"
+  },
+  "devDependencies": {
+    "vite": "^4.4.9",
+    "rollup-plugin-copy": "^3.5.0",
+    "@types/reveal.js": "^4.4.2",
+    "gh-pages": "^6.0.0"
+  }
+}

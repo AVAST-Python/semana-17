@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Reveal.js demo presentation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript">
+		let MathJax = {tex: {inlineMath: [['\\(', '\\)'], ['$', '$']]},
+		           svg: {fontCache: 'global'}};
+	</script>
+	<script type="text/javascript" id="MathJax-script" async
+	        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3/build/web/hack-subset.css">
+	<link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/monokai.css">
+	<link rel="stylesheet" href="https://rs-math.net/beamerkiller/beamerkiller.css" id="theme">
+	<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+	<meta name="author" content="Rafał M. Siejakowski">
+</head>
+<body><div class="reveal"><div class="slides">
+
+<section>
+	<h1>Reveal.js: a new way of making slideshows</h1>
+	<p>
+	To advance to the next slide, press the “&gt;” button in the bottom right corner of the screen.
+	Alternatively, you can use the right arrow key on a keyboard or swipe left on a touchscreen.
+	</p>
+</section>
+
+<section>
+	<h2>Introduction</h2>
+	<ul>
+	<li>
+	This is a template (and a demo) of a slideshow presentation using
+	<a href="https://revealjs.com">Reveal.js</a> by Hakim El Hattab.</li>
+	<li>
+	Additionally, this slideshow includes preconfigured plugins,
+	such as <a href="https://www.mathjax.org">MathJax</a> used to render mathematics.
+	</li>
+	<li>It is aimed at mathematicians, physicists, researchers and teachers, who
+	would like to put the Latex “beamer” package out of its misery.</li>
+	<li>
+	Reveal.js presentations are HTML5 documents and thus can be published on the web
+	without any modifications.
+	</li>
+</section>
+
+<section>
+	<h2>Features</h2>
+	<p>Reveal.js gives you complete flexibility in organising the content of your slides
+	into paragraphs, boxes, and custom elements.</p>
+	<ul>
+		<li>Bulleted and numbered lists are easy to make with plain HTML.</li>
+		<li style="color: #009000">All elements can be customised with CSS</li>
+	</ul>
+	<div class="box">
+		<div class="title">Beamer-style box</div>
+		<div class="content">
+		This is a typical box similar to how “beamer” displays
+		certain environments.
+		You can use it for theorems, examples, etc.
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>Mathematics</h3>
+	<p>
+	Mathematical formulae are rendered automatically by MathJax. To typeset a display equation,
+	simply enclose your LaTeX code in <span>\</span>[&nbsp;...&nbsp;<span>\</span>].
+	Example formula:
+	\[
+		\int_{-\infty}^{\infty} e^{-\pi x^2}\,dx = 1.
+	\]
+	</p>
+	<p>
+	Inline mathematics is enclosed in \$&nbsp;...&nbsp;\$.
+	For example, $a^2 + b^2 = c^2$.
+	</p>
+	<p>
+	You can embed vector graphics in SVG format directly into your presentation.
+	</p>
+</section>
+
+<section>
+	<h3>Progressive revealing of contents</h3>
+	<p>
+	Just like with any presentation software…
+	</p>
+	<ul>
+	<li class="fragment fade-out">Contents can disappear…</li>
+	<li class="fragment highlight-red">…or become red.</li>
+	<li class="fragment">But by default, they appear (fade in).</li>
+	<li class="fragment fade-in-then-out">They can also appear only temporarily.</li>
+	<li class="fragment fade-up">Various transitions are supported.</li>
+	</ul>
+</section>
+
+<section>
+	<h3>Syntax highlighting</h3>
+	<div class="colourbox">
+	Reveal.js comes with a built-in syntax highlighting plugin supporting
+	many markup and programming languages.<br>
+	You can see an example of a highlighted C code snippet below.
+	<pre><code data-trim>
+int _getpid(void) {return 1;}
+
+int _kill(int PID, int signal) {return 0;}
+
+void _exit(int status)
+{	// Enter infinite loop
+	while(1) {}
+}
+	</code></pre>
+	</div>
+</section>
+
+<section>
+	<h3>Annotations engine</h3>
+	<ol>
+	<li>Press <kbd>A</kbd> to enter <b>annotation mode</b>.</li>
+	<li>In annotation mode, left mouse key draws, right key erases.</li>
+	<li>Keys <kbd>Z</kbd> and <kbd>X</kbd> cycle through the available colours.</li>
+	<li>Press <kbd>A</kbd> again to exit annotation mode.</li>
+	<li>The <kbd>Delete</kbd> key erases all annotations.</li>
+	<li>In case you don't like using the keyboard for controlling the annotation mode,
+	you can create custom interactive controls, for example an
+	<button name="eraseButton" onclick="RevealChalkboard.clear()">Erase button</button>
+	</li>
+	</ol>
+</section>
+
+<section>
+	<h3>Blackboard mode</h3>
+	<ol>
+	<li>
+	<b>Blackboard mode</b> is similar to the annotations mode, except that you enter and leave it
+	by pressing the key <kbd>B</kbd>.
+	</li>
+	<li>
+	Other controls are similar as in <b>annotation mode</b>.
+	</li>
+	<li>
+	When you re-enter blackboard mode, your writing is still there.
+	You have a separate blackboard for every slide.
+	</li>
+	</ol>
+</section>
+
+<section data-transition="zoom">
+	<h3>Custom transitions</h3>
+	<div class="box">
+		<div class="title">Customizability</div>
+		<div class="content">
+			Various transition styles are available.
+		</div>
+	</div>
+
+	<div class="box vivid fragment fade-left">
+		<div class="title">Cool stuff</div>
+		<div class="content">
+			Take a look at <a href="https://revealjs.com/transitions/">Reveal.js documentation</a>
+			to learn about custom transitions.
+		</div>
+	</div>
+
+	<div class="box fragment fade-up">
+		<div class="title">Use the demo</div>
+		<div class="content">
+		Alternatively, you can look at the
+		<a href="https://rs-math.net/beamerkiller/index.html" download="demo.html" type="text/html">HTML source</a>
+        of this demo presentation in order to see how these effects are created.
+		</div>
+	</div>
+</section>
+
+<section>
+	<h3>Unlimited possibilities</h3>
+	<ul>
+	<li>
+	Since your Reveal.js slides are just an HTML5 document, all forms of multimedia
+	content available on a modern webpage can be embedded into your presentation.
+	</li>
+	<li class="fragment fade-right">
+	Publishing your presentation online makes it instantly available to your audience.
+	All they need is a web browser!
+	Mobile and touchscreen devices are supported too.
+	</li>
+	</ul>
+</section>
+
+<section>
+	<h2>How to get started</h2>
+	<ul>
+	<li>
+	You can look at the <a href="https://rs-math.net/beamerkiller/index.html" download="demo.html" type="text/html">source
+    of this demo document</a> to get an idea of how Reveal.js presentations are made.
+	</li>
+	<li class="fragment fade-right">
+	Visit <a href="https://revealjs.com">Reveal.js website</a> for a full description of available features.
+	<iframe title="revealjs" src="https://revealjs.com" width="100%" style="min-height: 20ex"></iframe>
+	</li>
+	</ul>
+</section>
+
+<section>
+	<h3>License information</h3>
+	<p>
+	This demo presentation was created by
+	<a href="https://rs-math.net" title="Homepage of Rafał Siejakowski">Rafael Siejakowski</a>
+	and is licensed under the
+	<a href="https://creativecommons.org/licenses/by-sa/4.0/" title="License">Creative Commons
+	CC&nbsp;BY-SA&nbsp;4.0</a> license.
+	You are free to create derivative works based on it.
+	</p>
+	<div>
+	<h5>Disclaimer</h5>
+	<p style="font-size: 70%;">
+	This software is provided “AS IS”, without warranty of any kind,
+	be that express or implied, including but not limited to the warranties of merchantability,
+	fitness for a particular purpose and non-infringement. In no event shall the authors
+	or copyright holders be liable for any claim, damages or other liability, whether in an action
+	of contract, tort or otherwise, arising from, out of or in connection with the software or the
+	use, misuse, failure to use, or other dealings in the software.
+	</p>
+	</div>
+</section>
+
+</div></div>
+<script src="https://rs-math.net/beamerkiller/reveal.js/dist/reveal.js"></script>
+<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js"></script>
+<script>
+Reveal.initialize({
+	slideNumber: 'c/t',
+	history: true,
+	transition: 'convex', // possible values: 'linear', 'slide', 'zoom', 'concave', 'convex', 'fade'.
+	plugins: [ RevealZoom, RevealHighlight ],
+	dependencies: [
+		{src: 'https://rs-math.net/beamerkiller/reveal.js/plugin/zoom/zoom.js'},
+		{src: 'https://rs-math.net/beamerkiller/reveal.js/plugin/highlight/highlight.js'},
+		{src: 'https://rs-math.net/beamerkiller/reveal.js/plugin/chalkboard/chalkboard.js' } ],
+	chalkboard: {
+		chalkEffect: 0.5,
+		background:  [ 'rgba(255,255,255,0)' ,
+			'https://rs-math.net/beamerkiller/reveal.js/plugin/chalkboard/img/blackboard.png'],
+		eraser: {src: 'https://rs-math.net/beamerkiller/reveal.js/plugin/chalkboard/img/sponge.png', radius: 50}
+	},
+	keyboard: {
+	65: function() { RevealChalkboard.toggleNotesCanvas() }, // Annotate when 'a' is pressed
+	66: function() { RevealChalkboard.toggleChalkboard() },	 // Toggle board when 'b' is pressed
+	46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+	 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide with 'BACKSPACE'
+	68: function() { RevealChalkboard.download() },	// download recorded chalkboard drawing when 'd' is pressed
+	88: function() { RevealChalkboard.colorNext() }, // cycle colors forward when 'x' is pressed
+	90: function() { RevealChalkboard.colorPrev() }, // cycle colors backward when 'z' is pressed
+	},
+});
+</script>
+</body>
+</html>
