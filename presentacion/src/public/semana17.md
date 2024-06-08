@@ -36,8 +36,8 @@
 
 # Proceso para jugar
 
-1) Registrarse en BattleSnake
-2) Entrar en el servidor de AVAST con un usuario:
+1) Registrarse en [BattleSnake](https://play.battlesnake.com/)
+2) Entrar en el [servidor de AVAST](https://battlesnake-avast.fly.dev/) con un usuario:
    - ¡NO REPITAS EL USUARIO!
    - Ojo porque se puede perder el código
 3) Crear un bot en BattleSnake
@@ -117,6 +117,8 @@
 
 # Código para probar
 
+Editor de código: [pythonandturtle.com](https://pythonandturtle.com/)
+
 ```python
 def move(data):
   # Tu codigo aqui
@@ -139,9 +141,34 @@ print(move(data))
 
 ---
 
+# Instrucciones básicas de python
 
+##### Condicionales
+
+```python
+if a > 1:
+    secuencia_instrucciones_1
+elif a == 1:
+    secuencia_instrucciones_2
+elif a == 0:
+    secuencia_instrucciones_3
+else:
+    secuencia_instrucciones_4
+```
+
+##### Bucles
+
+```python
+for i in range(10):
+    secuencia_instrucciones_1
+```
 
 ---
 
+# ¡A programar!
 
+Objetivo: dar vueltas alrededor del tablero
+
+- ¿Cómo puedes saber en qué dirección vas?
+- ¿Cómo puedes saber si hay una pared?
 
