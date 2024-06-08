@@ -1,0 +1,147 @@
+# Introducción a Python
+
+## Semana 17
+<!-- .element style="text-align:center" -->
+
+![alt text](./img/logo2.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block; width: 200px;" -->
+
+---
+
+![alt text](./img/violencia.jpg) <!-- .element style="margin-left: auto; margin-right: auto; display: block; width: 100%;" -->
+
+---
+
+![alt text](./img/battlesnake.gif) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
+
+---
+
+# ¡BattleSnake!
+
+![alt text](./img/logo_battlesnake.png) <!-- .element style="margin-left: auto; margin-right: auto; display: block" -->
+
+### Cómo funciona
+
+- El servidor de BattleSnake envía información sobre el estado del juego
+- El bot debe responder con la dirección en la que se moverá
+- Tú tienes que programar el bot
+<br/><br/>
+
+##### Enlaces:
+
+- BattleSnake: [play.battlesnake.com](https://play.battlesnake.com/)
+- Servidor AVAST: [battlesnake-avast.fly.dev](https://battlesnake-avast.fly.dev/)
+- Editor de código: [pythonandturtle.com](https://pythonandturtle.com/)
+
+---
+
+# Proceso para jugar
+
+1) Registrarse en BattleSnake
+2) Entrar en el servidor de AVAST con un usuario:
+   - ¡NO REPITAS EL USUARIO!
+   - Ojo porque se puede perder el código
+3) Crear un bot en BattleSnake
+4) Crear una partida
+5) Refinar el bot y crear más partidas
+
+---
+
+# Ejemplo jugada BattleSnake
+
+```json
+{
+  "game": {
+    "id": "game-id-string"
+  },
+  "turn": 4,
+  "board": {
+    "height": 15,
+    "width": 15,
+    "food": [
+      {"x": 1, "y": 3},
+      {"x": 1, "y": 5},
+      {"x": 3, "y": 1}
+    ],
+    "snakes": [
+      {
+        "id": "snake-id-string",
+        "name": "Sneky Snek",
+        "health": 90,
+        "body": [{"x": 1, "y": 3}, {"x": 1, "y": 4}, {"x": 1, "y": 5}]
+      }
+    ]
+  },
+  "you": {
+    "id": "snake-id-string",
+    "name": "Sneky Snek",
+    "health": 90,
+    "body": [{"x": 1, "y": 3}, {"x": 1, "y": 4}, {"x": 1, "y": 5}]
+  }
+}
+```
+
+---
+
+# Esto qué e lo que e?
+
+- JSON (JavaScript Object Notation)
+- Se accede a las partes con `data["board"]`
+- Se pueden anidar las llamadas: `data["you"]["body"]`,
+- Se acceden a las partes de las listas con índices: `data["you"]["body"][0]`
+
+```json
+{
+  "game": {
+    "id": "game-id-string"
+  },
+  "turn": 4,
+  "board": {
+    "height": 15,
+    "width": 15,
+    "food": [
+      {"x": 1, "y": 3},
+      {"x": 1, "y": 5},
+      {"x": 3, "y": 1}
+    ],
+  },
+  "you": {
+    "id": "snake-id-string",
+    "name": "Sneky Snek",
+    "health": 90,
+    "body": [{"x": 1, "y": 3}, {"x": 1, "y": 4}, {"x": 1, "y": 5}]
+  }
+}
+```
+
+---
+
+# Código para probar
+
+```python
+def move(data):
+  # Tu codigo aqui
+  # Debes devolver "up", "down", "left" o "right"
+
+  board = data["board"]
+  you = data["you"]
+
+  return "left"
+
+
+data = {
+    "board": {},
+    "you": {}
+}
+
+
+print(move(data))
+```
+
+---
+
+
+
+---
+
+
+
